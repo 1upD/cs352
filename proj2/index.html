@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>Self Portrait</title>
+  <link rel="stylesheet" type="text/css" href="index_files/portrait.css">
+</head>
+<body>
+  <div id="mainWindow">
+    <h3 class="titleBar">Self Portrait</h3>
+
+    <div id="controls">
+      <div id="sliderdiv">
+        <p id="slidertitle">Beard Size</p>
+        <input id="slider1" min="0" max="100" value="0" type="range">
+	<p id="pointcountpar"><span id="pointcount">0</span> points</p>
+      </div>
+      <button id="erasebutton" type="submit">Erase</button>
+      <button id="drawbutton" type="submit">Redraw</button>
+    </div>
+
+    <canvas id="canvas1" width="450" height="342">
+      <p>Your browser doesn't support the HTML5 canvas element.</p>
+    </canvas>
+  </div>
+
+  <div id="messageWindow">
+    <h3 class="titleBar">Messages</h3>
+    <div id="messages"></div>
+  </div>
+
+  <!-- javascript, loaded at the end to make the page appear faster -->
+  <script type="text/javascript" src="index_files/jquery-1.js"></script>
+  <script type="text/javascript" src="index_files/sylvester.js"></script>
+  <script type="text/javascript" src="index_files/portrait.js"></script>
+
+
+</body></html>
