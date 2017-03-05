@@ -44,6 +44,11 @@ deathstar.animate = function() {
   deathstar.cx.drawImage(background, 0 - background.width / 4, 0 - background.height/2);
   deathstar.cx.restore();
 
+  deathstar.cx.save();
+  deathstar.cx.scale(1/64,1/64);
+  deathstar.cx.drawImage(xwing, 0 - xwing.width/2, 0 - xwing.height/2);
+  deathstar.cx.restore();
+  
 }
 
 // turn on animation: cause animate function to be called every 20ms
