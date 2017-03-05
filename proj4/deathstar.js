@@ -10,7 +10,7 @@ deathstar.init = function () {
   deathstar.cx = deathstar.canvas.getContext('2d');
   deathstar.cx.fillStyle = 'rgb(255,0,0)';
 
-  deathstar.cx.setTransform(1,0,0,1,360,270);	// world frame is (-1,-1) to (1,1)
+  deathstar.cx.setTransform(1,0,0,1,256,256);	// world frame is (-1,-1) to (1,1)
 
   // bind functions to events, button clicks
   $('#gobutton').bind('click', deathstar.go);
@@ -20,7 +20,7 @@ deathstar.init = function () {
 
   deathstar.loadImages();
   $('#messageWindow').prepend("Starting the deathstar trench simulation");
-  stars.onload = function() { deathstar.animate(); }
+  background.onload = function() { deathstar.animate(); }
 }
 
 deathstar.animate = function() {
@@ -38,11 +38,12 @@ deathstar.animate = function() {
 
   // moon
   deathstar.cx.save();				// moon around earth
-  deathstar.cx.translate(56, 0);
-  deathstar.cx.drawImage(moon, 0 - moon.width/2, 0 - moon.height/2);
+  deathstar.cx.rotate(Math.PI / 2); // Rotate by 90	
+  deathstar.cx.translate(timefrac % (background.width / 2), 0);
+  deathstar.cx.drawImage(background, 0 - 3 * (background.width / 4), 0 - background.height/2);
+  deathstar.cx.drawImage(background, 0 - background.width / 4, 0 - background.height/2);
   deathstar.cx.restore();
 
-  deathstar.cx.restore();
 }
 
 // turn on animation: cause animate function to be called every 20ms
@@ -60,12 +61,10 @@ deathstar.step = function() {
 }
 
 deathstar.loadImages = function() {
-  sun = new Image();     sun.src = "sun.png";
-  moon = new Image();    moon.src = "moon.png";
-  earth = new Image();   earth.src = "earth.png";
-  mercury = new Image(); mercury.src = "mercury.png";
-  venus = new Image();   venus.src = "venus.png";
-  stars = new Image();   stars.src = "stars.jpg";
+  background = new Image();
+  background.src = "DeathStar.jpg";
+  xwing = new Image();
+  xwing.src = "X-Wing_Top.jpg";
 }
 
 deathstar.slider = function(ev) {
