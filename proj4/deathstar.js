@@ -69,7 +69,7 @@ deathstar.loadImages = function() {
   background = new Image();
   background.src = "DeathStar.jpg";
   xwing = new Image();
-  xwing.src = "X-Wing_Top.jpg";
+  xwing.src = "X-Wing_Top.png";
 }
 
 deathstar.slider = function(ev) {
