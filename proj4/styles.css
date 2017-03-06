@@ -59,6 +59,14 @@ body {
     left:-4pt;
 }
 
+#slider2 {
+    position:relative;
+    width:105px;
+    top: -24px;
+    left:-4pt;
+}
+
+
 #pointcountpar {
     position:relative;
     font-size:90%;

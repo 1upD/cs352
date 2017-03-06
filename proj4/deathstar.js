@@ -27,6 +27,7 @@ deathstar.animate = function() {
 
   // update time according to how much time has elapsed
   step = parseInt($('#slider1').val());
+  xpos = parseInt($('#slider2').val());
   time += step;
   timefrac = time/10;
   $('#timecount').text(time);
@@ -37,7 +38,7 @@ deathstar.animate = function() {
   //deathstar.cx.drawImage(sun, 0 - sun.width/2, 0 - sun.height/2);
 
   // moon
-  deathstar.cx.save();				// moon around earth
+  deathstar.cx.save();				
   deathstar.cx.rotate(Math.PI / 2); // Rotate by 90	
   deathstar.cx.translate(timefrac % (background.width / 2), 0);
   deathstar.cx.drawImage(background, 0 - 3 * (background.width / 4), 0 - background.height/2);
@@ -46,6 +47,12 @@ deathstar.animate = function() {
 
   deathstar.cx.save();
   deathstar.cx.scale(1/64,1/64);
+  deathstar.cx.translate(xpos, 0);
+  deathstar.cx.drawImage(xwing, 0 - xwing.width/2, 0 - xwing.height/2);
+  deathstar.cx.rotate(-timefrac /28);
+  deathstar.cx.translate(64 * 64, 0);
+  deathstar.cx.rotate(timefrac /28); // Rotate to cancel out the revolution
+  deathstar.cx.scale(1.25, 1.25); // Scale to account for this ship being on a closer plane
   deathstar.cx.drawImage(xwing, 0 - xwing.width/2, 0 - xwing.height/2);
   deathstar.cx.restore();
   
