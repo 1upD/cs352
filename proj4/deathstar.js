@@ -49,10 +49,10 @@ deathstar.animate = function() {
   deathstar.cx.scale(1/64,1/64);
   deathstar.cx.translate(xpos, 0);
   deathstar.cx.drawImage(xwing, 0 - xwing.width/2, 0 - xwing.height/2);
-  deathstar.cx.rotate(-timefrac /28);
+  deathstar.cx.rotate(-timefrac /512);
   deathstar.cx.translate(64 * 64, 0);
-  deathstar.cx.rotate(timefrac /28); // Rotate to cancel out the revolution
-  deathstar.cx.scale(1.25, 1.25); // Scale to account for this ship being on a closer plane
+  deathstar.cx.rotate(timefrac /512); // Rotate to cancel out the revolution
+  deathstar.cx.scale(1.3, 1.3); // Scale to account for this ship being on a closer plane
   deathstar.cx.drawImage(xwing, 0 - xwing.width/2, 0 - xwing.height/2);
   deathstar.cx.restore();
   
